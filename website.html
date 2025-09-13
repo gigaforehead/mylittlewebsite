@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lee Jiayi • Cybersecurity & Digital Forensics</title>
+  <meta name="description" content="Portfolio of Lee Jiayi — Cybersecurity & Digital Forensics student at Singapore Polytechnic. Projects, skills, resume, and contact." />
+  <meta property="og:title" content="Lee Jiayi • Cybersecurity & Digital Forensics" />
+  <meta property="og:description" content="Projects, skills, resume, and contact." />
+  <meta name="theme-color" content="#0ea5e9" />
+  <style>
+    :root{
+      --bg:#0b0f14;--panel:#0f1620;--muted:#93a4b7;--text:#e6eef7;--brand:#0ea5e9;--brand-2:#38bdf8;--brand-3:#a78bfa;--ring:rgba(56,189,248,.4);
+      --card:#0f1520;--card-2:#101826;--ok:#10b981;--warn:#f59e0b;--err:#ef4444;
+      --shadow:0 10px 25px rgba(2,6,23,.35);
+    }
+    @media (prefers-color-scheme: light){
+      :root{--bg:#f7fafc;--panel:#ffffff;--muted:#4b5563;--text:#0f172a;--card:#ffffff;--card-2:#f8fafc;}
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;font:16px/1.6 "Inter",ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";background:var(--bg);color:var(--text)}
+    a{color:var(--brand);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:1100px;margin:0 auto;padding:0 20px}
+    header{position:sticky;top:0;background:rgba(15,22,32,.8);backdrop-filter:saturate(140%) blur(12px);border-bottom:1px solid rgba(148,163,184,.1);z-index:50}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .brand{display:flex;gap:10px;align-items:center;font-weight:700}
+    .brand .logo{width:34px;height:34px;display:grid;place-items:center;border-radius:10px;background:linear-gradient(135deg,var(--brand),var(--brand-2));color:white;font-weight:800;box-shadow:var(--shadow)}
+    .links{display:flex;gap:18px;align-items:center}
+    .links a{font-weight:600;color:var(--text);opacity:.9}
+    .links a:hover{opacity:1}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border-radius:12px;font-weight:700;border:1px solid rgba(148,163,184,.15);background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(0,0,0,.04));box-shadow:var(--shadow)}
+    .btn.primary{background:linear-gradient(135deg,var(--brand),var(--brand-2));color:white;border:none}
+    .btn.ghost{background:transparent}
+    .btn:focus{outline:3px solid var(--ring);outline-offset:2px}
+    .hero{padding:64px 0 36px}
+    .hero .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center} .hero .card{padding:12px;} 
+    .kicker{display:inline-block;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--brand-2);background:rgba(56,189,248,.1);padding:6px 10px;border-radius:999px;border:1px solid rgba(56,189,248,.25)}
+    h1{font-size:clamp(28px,5vw,44px);line-height:1.15;margin:12px 0 10px}
+    .lead{font-size:18px;color:var(--muted)}
+    .cta{margin-top:18px;display:flex;gap:12px;flex-wrap:wrap}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(0,0,0,.12));border:1px solid rgba(148,163,184,.12);border-radius:18px;padding:18px}
+    .pill{display:inline-block;padding:6px 10px;background:rgba(148,163,184,.12);border:1px solid rgba(148,163,184,.18);border-radius:999px;color:var(--text);font-weight:600}
+    section{padding:36px 0}
+    .sec-title{display:flex;align-items:center;gap:10px;margin:0 0 14px}
+    .sec-title h2{margin:0;font-size:22px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:stretch}
+    .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    .project{display:flex;flex-direction:column;gap:10px}
+    .project h3{margin:0}
+    .grid-3 > .card.project{display:flex;flex-direction:column;height:100%}
+    .project .btn{margin-top:auto}
+    .tagbox{display:flex;flex-wrap:wrap;gap:8px}
+    .timeline{display:grid;gap:14px}
+    .row{display:flex;gap:16px}
+    .row .when{min-width:140px;color:var(--muted);font-weight:600}
+    footer{padding:36px 0;color:var(--muted)}
+    .tiny{font-size:13px;color:var(--muted)}
+    .sep{height:1px;background:linear-gradient(90deg,transparent,rgba(148,163,184,.25),transparent);margin:28px 0}
+    .note{font-size:14px;color:var(--muted)} .accent{height:4px;width:140px;background:linear-gradient(90deg,var(--brand),var(--brand-3),var(--brand-2));border-radius:999px;box-shadow:0 8px 24px rgba(56,189,248,.35);margin:10px 0 4px;}
+    .avatar{width:100%;height:auto;display:block;border-radius:18px;object-fit:cover;box-shadow:0 10px 30px rgba(2,6,23,.35), 0 0 0 3px rgba(56,189,248,.25);}
+    .kbd{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;background:rgba(148,163,184,.15);padding:2px 6px;border-radius:6px;border:1px solid rgba(148,163,184,.25)}
+    @media(max-width:900px){
+      .hero .grid{grid-template-columns:1fr}
+      .grid-3{grid-template-columns:1fr}
+      .grid-2{grid-template-columns:1fr}
+      .row{flex-direction:column}
+      .row .when{min-width:unset}
+    }
+    /* subtle colour accents */
+    main.container{position:relative;border-radius:24px;overflow:hidden;background:
+      radial-gradient(800px 300px at 10% 0%, rgba(56,189,248,.10), transparent 60%),
+      radial-gradient(650px 260px at 95% 5%, rgba(167,139,250,.08), transparent 55%);
+      border:1px solid rgba(56,189,248,.12);box-shadow:inset 0 1px 0 rgba(255,255,255,.02), 0 10px 30px rgba(2,6,23,.35)}
+    .sec-title h2{position:relative}
+    .sec-title h2::after{content:"";display:block;height:3px;width:56px;margin-top:6px;background:linear-gradient(90deg,var(--brand),var(--brand-3),var(--brand-2));border-radius:999px;opacity:.9}
+    .card{transition:transform .2s ease, border-color .2s ease, box-shadow .2s ease}
+    .card:hover{transform:translateY(-2px);border-color:rgba(56,189,248,.25);box-shadow:0 10px 30px rgba(2,6,23,.45)}
+    .hero{position:relative}
+    .hero::before{content:"";position:absolute;right:-5%;top:-10%;width:36%;height:60%;background:radial-gradient(closest-side, rgba(56,189,248,.18), transparent 55%);filter:blur(20px);pointer-events:none}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand"><div class="logo">LJ</div>Lee Jiayi</div>
+      <nav class="links" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero" id="home">
+      <div class="grid">
+        <div>
+          <span class="kicker">Cybersecurity & Digital Forensics Student</span>
+          <h1>Hi, I’m <span class="kbd">Lee Jiayi</span>. I protect, investigate, and adapt.</h1>
+          <p class="lead">Year 2 @ Singapore Polytechnic. Passionate about ethical hacking, incident response, and digital forensics. I enjoy breaking complex problems into clear steps and collaborating to ship reliable solutions.</p>
+          <div class="accent" aria-hidden="true"></div>
+          <div class="cta">
+            <a class="btn primary" href="#projects">View Projects</a>
+            <a class="btn" href="#contact">Contact Me</a>
+            <a class="btn ghost" href="resume.pdf" download>Download Resume</a>
+          </div>
+        </div>
+        <div class="card" aria-hidden="true">
+          <img class="avatar" alt="Abstract avatar placeholder" src="profile.jpg" />
+          
+        </div>
+      </div>
+    </section>
+
+    <div class="sep" role="presentation"></div>
+
+    <section id="about">
+      <div class="sec-title"><h2>About</h2><span class="pill">Curious • Positive • Team‑oriented</span></div>
+      <p>I’m a cybersecurity & digital forensics student driven by a genuine curiosity for how systems break and how to make them resilient. My interests include <strong>Linux administration</strong>, <strong>ethical hacking</strong>, and <strong>incident investigation</strong>. I thrive in fast‑paced, high‑stakes environments and enjoy translating technical findings into clear actions.</p>
+    </section>
+
+    <section id="skills">
+      <div class="sec-title"><h2>Skills</h2><span class="note">What I use most</span></div>
+      <div class="grid-3">
+        <div class="card">
+          <h3>Security</h3>
+          <div class="tagbox">
+            <span class="pill">Cybersecurity</span>
+            <span class="pill">Ethical Hacking (OWASP)</span>
+            <span class="pill">Linux System Administration</span>
+            <span class="pill">Network Fundamentals</span>
+            <span class="pill">Vulnerability Scanning</span>
+            <span class="pill">SOC Concepts</span>
+            <span class="pill">Incident Triage</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Forensics</h3>
+          <div class="tagbox">
+            <span class="pill">Evidence handling</span>
+            <span class="pill">Log analysis</span>
+            <span class="pill">Windows artifacts</span>
+            <span class="pill">Reporting</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>People & Process</h3>
+          <div class="tagbox">
+            <span class="pill">Team & independent work</span>
+            <span class="pill">Adaptability</span>
+            <span class="pill">Critical thinking</span>
+            <span class="pill">Communication</span>
+            <span class="pill">Time management</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Languages</h3>
+          <div class="tagbox">
+            <span class="pill">English (native/bilingual)</span>
+            <span class="pill">Chinese (professional)</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="sec-title"><h2>Projects</h2><span class="note">Selected work</span></div>
+      <div class="grid-3">
+        <article class="card project">
+          <h3>Functional Website with backend implementation</h3>
+          <p class="tiny">Gamified a website with its theme being guilds</p>
+          <div class="tagbox"><span class="pill">javascript</span><span class="pill">html</span><span class="pill">jwt</span><span class="pill">b-crypt</span></div>
+          <a class="btn" href="https://youtu.be/YAL4JV3CkWI" aria-label="Open project details">Case study</a>
+        </article>
+        <article class="card project">
+          <h3>Windows system sandbox</h3>
+          <p class="tiny">Built functional domain controllers with high availabality and active directory functions</p>
+          <div class="tagbox"><span class="pill">Windows systems</span><span class="pill">Group Policy</span><span class="pill">CIS benchmarks</span></div>
+          <a class="btn" href="write-up.pdf">Write‑up</a>
+        </article>
+        <article class="card project">
+          <h3>Infocomm security and network</h3>
+          <p class="tiny">Made a simple simulation of a school's infocomm and network infrastructure</p>
+          <div class="tagbox"><span class="pill">Cisco packet tracer</span><span class="pill">vlan</span><span class="pill">network</span></div>
+          <a class="btn" href="Completed Networking.pkt">packet tracer</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="sec-title"><h2>Experience</h2><span class="note">Part‑time roles</span></div>
+      <div class="timeline">
+        <div class="row card">
+          <div class="when">Sep–Oct 2024</div>
+          <div>
+            <strong>Twenty Loaf Toasties — F&B</strong>
+            <p class="tiny">Supported operations and customer experience; learned fast, stayed composed during peaks, and improved displays to boost sales.</p>
+          </div>
+        </div>
+        <div class="row card">
+          <div class="when">Dec 2023–Feb 2024</div>
+          <div>
+            <strong>EcoRing — Photographer</strong>
+            <p class="tiny">Produced clear, accurate listings for luxury resale items; attention to detail reduced disputes and sped up inventory turnover.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="sec-title"><h2>Education & Awards</h2></div>
+      <div class="grid-2">
+        <div class="card">
+          <strong>Singapore Polytechnic</strong>
+          <p class="tiny">Diploma in Cybersecurity & Digital Forensics (2024–2026)</p>
+        </div>
+        <div class="card">
+          <strong>Awards & Certs</strong>
+          <p class="tiny">Edusave Good Progress Award · Rock Your LinkedIn Profile (2019)</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="sep" role="presentation"></div>
+
+    <section id="contact">
+      <div class="sec-title"><h2>Contact</h2><span class="note">Let’s work together</span></div>
+      <div class="grid-2">
+        <div class="card">
+          <p>Email: <a href="mailto:classarea52@gmail.com">classarea52@gmail.com</a></p>
+          <p>LinkedIn: <a href="https://www.linkedin.com/in/lee-jiayi-" target="_blank" rel="noreferrer noopener">linkedin.com/in/lee‑jiayi‑</a></p>
+        </div>
+        <div class="card">
+          <p class="tiny">Looking for: SOC/IR/DFIR internship opportunities, hands‑on experience with monitoring, triage, and investigations, and opportunities to learn from experienced analysts.</p>
+          <p class="tiny">Available for weekend or rotation shifts if required.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="sep" role="presentation"></div>
+      <p class="tiny">© <span id="y"></span> Lee Jiayi • Built with semantic HTML & pure CSS • <span class="tiny">Dark‑mode ready</span></p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
